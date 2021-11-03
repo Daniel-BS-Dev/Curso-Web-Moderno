@@ -1,9 +1,15 @@
-function throwError(error){
-    throw "nos já vimos que o seu error foi:  estamos melhorando sua navegação"
-    error
+function throwError(erro){
+    //throw new Error('....')
+   // throw "nos já vimos que o seu error foi:  estamos melhorando sua navegação"
+   throw{
+       id: 1,
+       name: erro.name,
+       message: erro.message,
+       date: new Date
+   } 
 }
 
-function toScream(obj){
+function printNameScreamed(obj){
 try{
 console.log((obj.nme).toUpperCase()+"!!!!")
 }
@@ -16,4 +22,4 @@ const obj = {
     name:"Daniel"
 }
 
-toScream(obj);
+printNameScreamed(obj);
