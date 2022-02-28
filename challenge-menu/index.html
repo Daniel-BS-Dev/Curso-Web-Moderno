@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      .header-container {
+        width: 100%;
+        padding: 10px;
+        background-color: #1c1c1c;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .image-logo {
+        width: 40%;
+      }
+
+      .nav-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .nav-container nav {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-container nav a{
+        padding: 5px 0;
+      }
+
+      .nav-container nav a.selected{
+        color: blue;
+      }
+
+      .nav-container nav a, aside a{
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .nav-container{
+          display: none;
+      }
+
+      .view{
+          display: block;
+      }
+
+      .menu-toggle{
+        width: 30px;
+        height: 40px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <img
+        class="image-logo"
+        src="http://files.cod3r.com.br/curso-web/logo.png"
+        alt="logo"
+      />
+
+      <div class="nav-container">
+        <nav class="menu">
+          <a href="#beginning">Iniciou</a>
+          <a href="#course">Cursos</a>
+          <a href="#about">Sobre</a>
+          <a href="#contact">Contato</a>
+        </nav>
+
+        <aside>
+          <a href="#login">Login</a>
+          <a href="#register">Rgistrar</a>
+        </aside>
+      </div>
+      <button class="menu-toggle">
+        <img src="image/bars-solid.svg" alt="toggle" />
+      </button>
+    </header>
+
+    <script>
+      const menu = document.querySelector('.nav-container');
+      const buttonToggle = document.querySelector('.menu-toggle');
+
+      buttonToggle.addEventListener('click', function(){
+          menu.classList.toggle('view')
+      })
+
+      // adicionando e removendo estilo do menu
+      window.onhashchange = function(e){
+          const oldURL = e.oldURL.split('#')[1]
+          const newURL = e.newURL.split('#')[1]
+          const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`)
+          const newMenu = document.querySelector(`.menu a[href='#${newURL}']`)
+          oldMenu && oldMenu.classList.remove('selected')
+          newMenu && newMenu.classList.add('selected')
+      
+      }
+    </script>
+
+  </body>
+</html>
