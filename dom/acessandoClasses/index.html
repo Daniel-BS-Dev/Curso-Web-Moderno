@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .destaque{
+            background: red;
+            padding: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        classes
+    </section>
+
+    <script>
+        const classes = document.querySelector('section').classList
+        classes.add('destaque') // adiciona
+        classes.remove('destaque') // remove
+        classes.toggle('destaque') // se tiver remove senão adiciona
+        console.log(classes.contains('destaque')) // tem a classe
+        console.log(classes.length)
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="conteudo">
+        <h1>
+            Formulario
+        </h1>
+        <form name="pesquisa" action="http://www.google.com.br/search">
+           <input type="text"name="q" placeholder="Digite o termo..." />
+           <select name="hl">
+               <option value="pt-br">Portugues (Brasil)</option>
+               <option value="en-us500">Ingles (Americano)</option>
+           </select>
+           <button>Pesquisar</button>
+        </form>
+    </section>
+
+    <script>
+      console.log(document.forms) // pega todos os elementos do formulario
+      console.log(document.forms[0]) // pega todos o primeiro elemento do formulario
+      console.log(document.getElementsByName('pesquisa')) // pega por nome
+      console.log(document.pesquisa) // vai pegar elemento com nome pesquisa
+      console.log(document.pesquisa.q) // vai pegar elemento com nome q
+      document.pesquisa.q.value = 'linux' // vai pegar o valor
+    </script>
+</body>
+</html>

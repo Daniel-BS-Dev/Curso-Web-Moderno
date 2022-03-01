@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <a href="#">Cod3r</a>
+        <img src="#daniel" alt="logo" data-urgencia="eu" />
+    </section>
+
+    <script>
+        const img = document.querySelector('img');
+        console.log('getAttribute', img.getAttribute('src')) // pegando o src da image
+        console.log('getAttributo', img.getAttributeNode('src')) // me da um no q representa o atributo
+        console.log('src', img.src) // pegando o src da image
+        console.log('src', img['src']) // pegando o src da image
+        console.log('setAttribute', img.setAttribute('alt', '#antoniel')) // modificando o valor alt
+        console.log('setAttribute', img.setAttribute('class', 'attribute')) // adiciando uma nova class
+        img.removeAttribute('class') // removendo a class
+        console.log(img.dataset) // pegando o obj do meu data
+        console.log(img.dataset.urgencia) // pegando o valor do meu data
+        img.dataset.urgencia = 3 // modifcando o valor
+        console.log(img.getAttribute('data-urgencia')) // pegando o valor do meu data 
+
+        const link = document.querySelector('a');
+        console.log("firstChild", link.firstChild.nodeType) // pegando os filhos
+        link.firstChild.nodeValue = 'Daniel' // modificando valor
+        link.innerHTML = "Israel"  // outra maneira para modificar
+    </script>
+</body>
+</html>

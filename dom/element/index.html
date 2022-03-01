@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemente</title>
+
+    <style>
+      .adding{
+          border: 1px solid blue;
+          background: tomato;
+          margin: 10px;
+      }
+    </style>
+
+</head>
+<body>
+    <section class="conteud">
+        <div id="first">#First</div>
+        <div>Second</div>
+        <div class="last third">last third</div>
+    </section>
+
+    <script>
+        document.getElementById("first").classList.add('adding') // pegando por id
+        const divs = document.getElementsByTagName('div') // pegando por nome da tag
+        Array.from(divs).forEach(e => e.classList.remove('adding')) // transformei as divs em array e remove o adding
+
+        const arrayDivs = [...divs]; // outra maneira de transformar em array
+        arrayDivs.forEach(e => e.classList.add('adding'))
+
+        const divClass = document.getElementsByClassName('last')
+        for(let e of divClass){
+           e.classList.remove('adding') // inderando sem transformar em array
+        }
+    </script>
+</body>
+</html>

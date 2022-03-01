@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <script>
+        const body = document.querySelector('body')
+        const div1 = document.createElement('div') // criando uma div
+        div1.classList.add('destaque')
+        div1.innerHTML = 'First'
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('data-attribute', 'valor')
+        div2.innerHTML = 'Second'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Third'
+        const div3 = document.createElement('div')
+        div3.appendChild(p); // adiciona como ultimo filho
+
+
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        // inserindo antes do nó 1
+        const text = document.createTextNode('Antes...');
+        div3.insertBefore(text, div3.childNodes[0])
+
+        //criando um clone
+        const div4 = div3.cloneNode(true) // true copia os filho falso não copia
+        body.appendChild(div4)
+
+        // excluindo o nó
+        body.removeChild(div3)
+    </script>
+</body>
+</html>

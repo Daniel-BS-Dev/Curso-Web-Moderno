@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .cabeçalho, .navegação, .body, .rodape{
+       font-size: 30px;
+       padding: 40px;
+    }
+
+     .cabeçalho{
+        border: 1px solid red;
+        grid-area: cabecalho;
+     }
+
+     .navegação{
+       border: 1px solid blue;
+       grid-area: navegacao;
+     }
+
+     .body{
+       border: 1px solid green;
+       grid-area: conteudo;
+     }
+
+     .rodape{
+      border: 1px solid yellow;
+      grid-area: rodape;
+     }
+
+     body{
+         display: grid;
+         min-height: 100vh;
+         grid-template-columns: 300px 1fr;
+         grid-template-rows: 100px 1fr 100px;
+         grid-template-areas: 
+         'cabecalho cabecalho'
+         'navegacao conteudo'
+         'rodape rodape';
+     }
+
+     @media(max-width: 700px) {
+         body{
+             grid-template-columns: 1fr;
+             grid-template-rows: 80px 1fr 100px;
+             grid-template-areas: 
+             'navegacao'
+             'conteudo'
+             'rodape';
+         }
+
+         header{
+             display: none;
+         }
+     }
+        
+    </style>
+</head>
+<body>
+
+    <!--
+           body{
+            display: grid;
+            grid-template-columns: 50% 50%; /* duas columas de 50% */
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%);  /* 4 X 3 = 12 columas de 8.33% */
+            grid-template-columns: minmax(200px, 300px);  /* no minimo 200px no maxino 300px */
+            grid-template-columns: 200px, 20% 1fr;  /* 3 columas primeira 200px, segunda 20% terceira o resto q sobrar*/
+            grid-template-rows: 100px auto;  /* primeira linha terá 100px o resto será auto */
+            grid-gap: 50px 20px;  /* 50 left 20 bottom */
+            grid-gap: 10px; /* 10 geral */
+         }
+
+        .d8{
+            grid-column-start: 2;  /* div de class d8 começa na coluna 2 */
+            grid-column-end: 4;  /* termina na coluna 4 */
+            grid-row-start: 3 ; /* começa na linha 3 */
+            grid-row-end: 5; /* termina na linha 5  */
+        }
+    -->
+
+    <header class="cabeçalho">cabeçalho</header>
+    <aside class="navegação">navegação</aside>
+    <section class="body">body</section>
+    <footer class="rodape">rodape</footer>
+    
+</body>
+</html>
